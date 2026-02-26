@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dke3b3daasych"]
+
+[ext_resource type="Script" uid="uid://dlll57o11y7wt" path="res://levels/base_level.gd" id="1_eqj1n"]
+[ext_resource type="Script" uid="uid://beqaywe53gnyd" path="res://common/weather/weather_controller.gd" id="2_jq6ke"]
+[ext_resource type="Script" uid="uid://u22y7ky6inuy" path="res://common/lights/sun_controller.gd" id="3_c6rcp"]
+[ext_resource type="Script" uid="uid://do8fu2ia6aemr" path="res://entities/camera/camera_controller.gd" id="4_sxshs"]
+
+[node name="BaseLevel" type="Node2D" unique_id=1105517813]
+script = ExtResource("1_eqj1n")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1256682455]
+
+[node name="Entities" type="Node2D" parent="." unique_id=1888706601]
+
+[node name="WeatherController" type="Node" parent="." unique_id=719827855]
+script = ExtResource("2_jq6ke")
+metadata/_custom_type_script = "uid://beqaywe53gnyd"
+
+[node name="SunController" type="Node" parent="." unique_id=695638575 node_paths=PackedStringArray("sun_light")]
+script = ExtResource("3_c6rcp")
+sun_light = NodePath("DirectionalLight2D")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="SunController" unique_id=573916853]
+
+[node name="CameraController" type="Camera2D" parent="." unique_id=857720561]
+script = ExtResource("4_sxshs")
+metadata/_custom_type_script = "uid://do8fu2ia6aemr"

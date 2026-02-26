@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IslandData" format=3 uid="uid://cx0chfek5ne5x"]
+
+[ext_resource type="Script" uid="uid://cg1m7m8wc2e8g" path="res://levels/islands/island_data.gd" id="1_pirxt"]
+
+[resource]
+script = ExtResource("1_pirxt")
+location = Vector2i(138, 21)
+metadata/_custom_type_script = "uid://cg1m7m8wc2e8g"
