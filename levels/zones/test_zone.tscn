@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bipmkcanotays"]
+
+[ext_resource type="PackedScene" uid="uid://dke3b3daasych" path="res://levels/base_level.tscn" id="1_nbvkk"]
+[ext_resource type="Texture2D" uid="uid://d4ghngoipjd1g" path="res://icon.svg" id="2_j5u5c"]
+[ext_resource type="Script" uid="uid://bcxrgqx6oqhuu" path="res://entities/player/player_movement.gd" id="3_t3s8h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3s8h"]
+radius = 31.0
+height = 62.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1oge5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j5u5c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3s8h"]
+size = Vector2(118, 120)
+
+[node name="TestZone" type="Node2D" unique_id=888906013]
+
+[node name="BaseLevel" parent="." unique_id=1105517813 instance=ExtResource("1_nbvkk")]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1176458395]
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1009836515]
+shape = SubResource("CapsuleShape2D_t3s8h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=236921076]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1oge5")
+
+[node name="PlayerMovement" type="Node" parent="Player" unique_id=1460404518]
+script = ExtResource("3_t3s8h")
+speed = 200.0
+metadata/_custom_type_script = "uid://bcxrgqx6oqhuu"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1357636102]
+position = Vector2(247, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=968170813]
+texture = ExtResource("2_j5u5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=211873850]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_t3s8h")

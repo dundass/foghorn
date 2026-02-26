@@ -2,9 +2,7 @@
 extends CharacterStats
 class_name PlayerStats
 
-
 var inventory: Inventory
-
 
 func _ready() -> void:
 	super._ready()
@@ -13,7 +11,6 @@ func _ready() -> void:
 	
 	if WearableManager.get_instance():
 		WearableManager.get_instance().wearables_changed.connect(_on_wearables_changed)
-
 
 func _on_wearables_changed(new_item: Wearable, old_item: Wearable) -> void:
 	if new_item != null:
