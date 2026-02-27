@@ -5,9 +5,7 @@ class_name PlayerStats
 var inventory: Inventory
 
 func _ready() -> void:
-	super._ready()
-	
-	GameManager.player_stats = self
+	GameManager.player.stats = self 
 	
 	if WearableManager.get_instance():
 		WearableManager.get_instance().wearables_changed.connect(_on_wearables_changed)
