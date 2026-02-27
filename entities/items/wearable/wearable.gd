@@ -2,7 +2,6 @@
 extends Item
 class_name Wearable
 
-
 enum WearableSlot {
 	HEAD,
 	CHEST,
@@ -15,9 +14,9 @@ enum WearableSlot {
 }
 
 @export var slot: WearableSlot = WearableSlot.HEAD
-
+@export var armour_modifier: float = 0.0
+@export var damage_modifier: float = 0.0
 
 func use() -> void:
-	if WearableManager.get_instance():
-		WearableManager.get_instance().equip(self)
-		remove_from_inventory()
+	GameManager.player.wearable_manager.equip(self)
+	remove_from_inventory()
