@@ -1,8 +1,43 @@
 [gd_scene format=3 uid="uid://bipmkcanotays"]
 
 [ext_resource type="PackedScene" uid="uid://dke3b3daasych" path="res://levels/base_level.tscn" id="1_nbvkk"]
+[ext_resource type="TileSet" uid="uid://chbuv2lw3i8qp" path="res://levels/art/tilesets/test_tileset.tres" id="2_1oge5"]
 [ext_resource type="Texture2D" uid="uid://d4ghngoipjd1g" path="res://icon.svg" id="2_j5u5c"]
+[ext_resource type="Script" uid="uid://cdjeq6uvsr7a5" path="res://levels/generation/terra_generator.gd" id="3_c3fr7"]
 [ext_resource type="Script" uid="uid://bcxrgqx6oqhuu" path="res://entities/player/player_movement.gd" id="3_t3s8h"]
+[ext_resource type="Script" uid="uid://dcadea63nqk6e" path="res://levels/generation/world_renderer.gd" id="4_4hkiu"]
+[ext_resource type="Script" uid="uid://cg1m7m8wc2e8g" path="res://levels/islands/island_data.gd" id="4_p0mkd"]
+[ext_resource type="Script" uid="uid://dslvhjq7a0vo5" path="res://entities/player/player.gd" id="5_4hkiu"]
+[ext_resource type="Resource" uid="uid://c174yrynivmoh" path="res://levels/islands/data/island_30_63.tres" id="5_v4588"]
+[ext_resource type="Resource" uid="uid://nv4b8gkyyoss" path="res://levels/islands/data/island_44_32.tres" id="6_p6dhk"]
+[ext_resource type="Resource" uid="uid://if1ae84r6mt6" path="res://levels/islands/data/island_68_50.tres" id="7_l0ngr"]
+[ext_resource type="Resource" uid="uid://bw30putt67ivy" path="res://levels/islands/data/island_89_134.tres" id="8_buq4y"]
+[ext_resource type="Resource" uid="uid://bk2srcvi6wbp8" path="res://levels/islands/data/island_95_31.tres" id="9_wpuyw"]
+[ext_resource type="Resource" uid="uid://cuka3gmir4ui5" path="res://levels/islands/data/island_120_79.tres" id="10_yd54k"]
+[ext_resource type="Resource" uid="uid://b7ukxvmf0bjts" path="res://levels/islands/data/island_123_103.tres" id="11_8fh3u"]
+[ext_resource type="Resource" uid="uid://dvarj3q4hwwtu" path="res://levels/islands/data/island_124_105.tres" id="12_i0wyc"]
+[ext_resource type="Resource" uid="uid://c3jim7yp6aqny" path="res://levels/islands/data/island_129_120.tres" id="13_nev4v"]
+[ext_resource type="Resource" uid="uid://cx0chfek5ne5x" path="res://levels/islands/data/island_138_21.tres" id="14_phyql"]
+[ext_resource type="Resource" uid="uid://bu2fbemltikn7" path="res://levels/islands/data/island_157_33.tres" id="15_fwbv5"]
+[ext_resource type="Resource" uid="uid://bbn4xe24wn5jk" path="res://levels/islands/data/island_181_27.tres" id="16_jm061"]
+[ext_resource type="Resource" uid="uid://fopcbxv23s6n" path="res://levels/islands/data/island_207_30.tres" id="17_lh7rn"]
+[ext_resource type="Resource" uid="uid://yutjn5b4qovq" path="res://levels/islands/data/island_209_101.tres" id="18_m4e66"]
+[ext_resource type="Resource" uid="uid://d0uogq1xxy615" path="res://levels/islands/data/island_217_183.tres" id="19_u6ctt"]
+[ext_resource type="Resource" uid="uid://beqrha38qs4p" path="res://levels/islands/data/island_222_132.tres" id="20_1okv1"]
+[ext_resource type="Resource" uid="uid://ccibj0cgq2683" path="res://levels/islands/data/island_249_157.tres" id="21_tvj58"]
+[ext_resource type="Resource" uid="uid://bwfaqewm3k24d" path="res://levels/islands/data/island_265_74.tres" id="22_whxyj"]
+[ext_resource type="Resource" uid="uid://cpaf6rioejx70" path="res://levels/islands/data/island_272_137.tres" id="23_yug6a"]
+[ext_resource type="Resource" uid="uid://or4yeo4ubxo0" path="res://levels/islands/data/island_283_185.tres" id="24_kvwkn"]
+[ext_resource type="Resource" uid="uid://c0ygrcjaqip14" path="res://levels/islands/data/island_291_140.tres" id="25_uy4ks"]
+[ext_resource type="Resource" uid="uid://hfa251q4iqel" path="res://levels/islands/data/island_300_164.tres" id="26_ll8tw"]
+[ext_resource type="Resource" uid="uid://jsshyw3e043m" path="res://levels/islands/data/island_303_71.tres" id="27_us8u7"]
+[ext_resource type="Resource" uid="uid://4phcnllnoocn" path="res://levels/islands/data/island_308_192.tres" id="28_eu7nw"]
+[ext_resource type="Resource" uid="uid://dn4uxb8jfe16m" path="res://levels/islands/data/island_309_135.tres" id="29_r4lfp"]
+[ext_resource type="Resource" uid="uid://dlyf68t03tx0i" path="res://levels/islands/data/island_317_67.tres" id="30_8d3xh"]
+[ext_resource type="Resource" uid="uid://b3f7hwkc1eby0" path="res://levels/islands/data/island_324_190.tres" id="31_dy2xi"]
+[ext_resource type="Resource" uid="uid://deltsjkh3eibf" path="res://levels/islands/data/island_331_165.tres" id="32_u4giq"]
+[ext_resource type="Resource" uid="uid://ct21fjtwby27j" path="res://levels/islands/data/island_347_184.tres" id="33_xtdkx"]
+[ext_resource type="Resource" uid="uid://lslltkj06ysc" path="res://levels/islands/data/island_356_165.tres" id="34_l2g0d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3s8h"]
 radius = 31.0
@@ -19,15 +54,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3s8h"]
-size = Vector2(118, 120)
-
 [node name="TestZone" type="Node2D" unique_id=888906013]
 
 [node name="BaseLevel" parent="." unique_id=1105517813 instance=ExtResource("1_nbvkk")]
 
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=101945178]
+tile_set = ExtResource("2_1oge5")
+
+[node name="TerraGenerator" type="Node" parent="." unique_id=2036209705 node_paths=PackedStringArray("world_renderer", "player")]
+script = ExtResource("3_c3fr7")
+_islands = Array[ExtResource("4_p0mkd")]([ExtResource("5_v4588"), ExtResource("6_p6dhk"), ExtResource("7_l0ngr"), ExtResource("8_buq4y"), ExtResource("9_wpuyw"), ExtResource("10_yd54k"), ExtResource("11_8fh3u"), ExtResource("12_i0wyc"), ExtResource("13_nev4v"), ExtResource("14_phyql"), ExtResource("15_fwbv5"), ExtResource("16_jm061"), ExtResource("17_lh7rn"), ExtResource("18_m4e66"), ExtResource("19_u6ctt"), ExtResource("20_1okv1"), ExtResource("21_tvj58"), ExtResource("22_whxyj"), ExtResource("23_yug6a"), ExtResource("24_kvwkn"), ExtResource("25_uy4ks"), ExtResource("26_ll8tw"), ExtResource("27_us8u7"), ExtResource("28_eu7nw"), ExtResource("29_r4lfp"), ExtResource("30_8d3xh"), ExtResource("31_dy2xi"), ExtResource("32_u4giq"), ExtResource("33_xtdkx"), ExtResource("34_l2g0d")])
+world_renderer = NodePath("../WorldRenderer")
+player = NodePath("../Player")
+metadata/_custom_type_script = "uid://cdjeq6uvsr7a5"
+
+[node name="WorldRenderer" type="Node" parent="." unique_id=581849220 node_paths=PackedStringArray("ground_tilemap")]
+script = ExtResource("4_4hkiu")
+ground_tilemap = NodePath("../TileMapLayer")
+metadata/_custom_type_script = "uid://dcadea63nqk6e"
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1176458395]
 motion_mode = 1
+script = ExtResource("5_4hkiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1009836515]
 shape = SubResource("CapsuleShape2D_t3s8h")
@@ -40,13 +88,3 @@ sprite_frames = SubResource("SpriteFrames_1oge5")
 script = ExtResource("3_t3s8h")
 speed = 200.0
 metadata/_custom_type_script = "uid://bcxrgqx6oqhuu"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1357636102]
-position = Vector2(247, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=968170813]
-texture = ExtResource("2_j5u5c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=211873850]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_t3s8h")

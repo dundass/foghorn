@@ -6,16 +6,14 @@ class_name TerraGenerator
 @export var chunk_cell_iterations: int = 11
 @export var upscale_cell_iterations: int = 2
 @export var lagoon_removal_chance: float = 0.95
-@export var growth_delay_min: int = 4
-@export var growth_delay_max: int = 10
 @export var generate_settlements: bool = false
 @export var generate_environmental_props: bool = false
 
 @export var world_renderer: WorldRenderer
-@export var overground_lights: Node
+@export var player: CharacterBody2D
+
 @export var denizen_parent: Node
 @export var denizen_prefab: Node
-@export var player: Node
 
 enum BlockType {
 	GROUND = 1,
@@ -44,26 +42,23 @@ var _rulesets: Dictionary = {
 
 var _block_size: int = 10
 
-
 func _ready() -> void:
 	# Stores all terra tile states
 	land_ca = CA2D.new(10, 384 * _block_size)
-	land_ca.rule_set = _rulesets["land"]
+	land_ca.set_ruleset(_rulesets["land"])
 	
 	# Set all rules for uniformly live neighbourhoods to stay at that total
 	for i in range(land_ca.num_states):
-		land_ca.rule_set[i * 8] = i
+		land_ca._rule_set[i * 8] = i
 	
 	house_ca = CA2D.new(3, 384 * _block_size)
 	
 	# Stores all world/island chunk states
 	chunk_ca = CA2D.new(4, 384)
-	chunk_ca.rule_set = _rulesets["island"]
+	chunk_ca.set_ruleset(_rulesets["island"])
 	
 	forest_ca = CA2D.new(3, 384 * _block_size)
 	forest_ca.set_lambda_ruleset(0.3)
-	
-	_islands.resize(30)
 	
 	_generate_world()
 	
@@ -74,10 +69,10 @@ func _ready() -> void:
 		_generate_environmental_props()
 	
 	if world_renderer:
-		world_renderer.render_world(land_ca, house_ca, forest_ca)
+		world_renderer.render_world(land_ca)
 	
 	if player:
-		player.global_position = Vector3(_islands[0].location.x * _block_size, _islands[0].location.y * _block_size, 0)
+		player.global_position = Vector2(_islands[0].location.x * _block_size, _islands[0].location.y * _block_size)
 
 
 func _generate_world() -> void:
@@ -148,7 +143,7 @@ func _generate_settlements() -> void:
 						if denizen_parent:
 							denizen_parent.add_child(denizen)
 	
-	house_ca.rule_set = _rulesets["house"]
+	house_ca.set_ruleset(_rulesets["house"])
 	house_ca.update_iterations(5)
 	
 	print("finished settlement generation !")
