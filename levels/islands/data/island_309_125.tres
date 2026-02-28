@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_py3dy")
-location = Vector2i(309, 135)
+location = Vector2i(309, 125)
 metadata/_custom_type_script = "uid://cg1m7m8wc2e8g"

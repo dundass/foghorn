@@ -84,10 +84,10 @@ func _generate_world() -> void:
 	for i in range(chunk_cell_iterations):
 		for n in range(_islands.size()):
 			if i == _islands[n].growth_delay:
-				for seed in _islands[n].seeds:
-					var x: int = int(_islands[n].location.x) + seed.x
-					var y: int = int(_islands[n].location.y) + seed.y
-					chunk_ca.set_cell(x, y, _islands[n].seeds[seed])
+				for island_seed: Dictionary in _islands[n].seeds:
+					var x: int = int(_islands[n].location.x) + island_seed.x
+					var y: int = int(_islands[n].location.y) + island_seed.y
+					chunk_ca.set_cell(x, y, _islands[n].seeds[island_seed])
 		chunk_ca.update()
 	
 	print("finished island generation !")

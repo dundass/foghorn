@@ -1,12 +1,22 @@
 # Island definition
+@tool
 extends Resource
 class_name IslandData
 
+signal location_changed(new_location: Vector2i)
+
 @export var name: String = "Island"
-@export var location: Vector2i
+@export var location: Vector2i:
+	set(new_location):
+		if location != new_location:
+			location = new_location
+			# Emit signals when the property is changed.
+			location_changed.emit(new_location)
+			changed.emit()
 @export var growth_delay: int = 5
 @export var lagoon_threshold: int = 3
-@export var ruleset: String = "island"
+@export var coarse_ruleset: String = "island"
+@export var fine_ruleset: String = "land"
 
 var seeds: Dictionary = {}
 
