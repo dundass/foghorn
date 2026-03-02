@@ -1,5 +1,5 @@
 class_name Player
-extends Node
+extends CharacterBody2D
 
 var stats: PlayerStats
 var inventory: Inventory
