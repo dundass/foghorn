@@ -8,4 +8,6 @@ const SCENE_PATHS: Dictionary = {
 	"game_over_menu": "res://Menus/GameOverMenu.tscn"
 }
 
+const CHUNK_CELL_SIZE: int = 10
+
 # global enums go here
