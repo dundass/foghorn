@@ -32,3 +32,6 @@ func _init() -> void:
 				randi_range(-_max_seed_dist, _max_seed_dist)
 			)
 			seeds[seed_pos] = randi_range(1, ca_max)
+
+func get_location_chunked() -> Vector2i:
+	return location * Constants.CHUNK_CELL_SIZE

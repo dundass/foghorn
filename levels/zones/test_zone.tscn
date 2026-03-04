@@ -12,12 +12,10 @@
 [ext_resource type="Resource" uid="uid://bw30putt67ivy" path="res://levels/islands/data/island_89_134.tres" id="8_buq4y"]
 [ext_resource type="Resource" uid="uid://bk2srcvi6wbp8" path="res://levels/islands/data/island_95_31.tres" id="9_wpuyw"]
 [ext_resource type="Resource" uid="uid://cuka3gmir4ui5" path="res://levels/islands/data/island_120_79.tres" id="10_yd54k"]
-[ext_resource type="Resource" uid="uid://b7ukxvmf0bjts" path="res://levels/islands/data/island_123_103.tres" id="11_8fh3u"]
 [ext_resource type="Resource" uid="uid://dvarj3q4hwwtu" path="res://levels/islands/data/island_164_165.tres" id="12_i0wyc"]
 [ext_resource type="Resource" uid="uid://c3jim7yp6aqny" path="res://levels/islands/data/island_129_120.tres" id="13_nev4v"]
 [ext_resource type="Resource" uid="uid://cx0chfek5ne5x" path="res://levels/islands/data/island_138_21.tres" id="14_phyql"]
 [ext_resource type="Resource" uid="uid://bu2fbemltikn7" path="res://levels/islands/data/island_157_33.tres" id="15_fwbv5"]
-[ext_resource type="Resource" uid="uid://bbn4xe24wn5jk" path="res://levels/islands/data/island_181_27.tres" id="16_jm061"]
 [ext_resource type="Resource" uid="uid://fopcbxv23s6n" path="res://levels/islands/data/island_207_30.tres" id="17_lh7rn"]
 [ext_resource type="Resource" uid="uid://yutjn5b4qovq" path="res://levels/islands/data/island_209_101.tres" id="18_m4e66"]
 [ext_resource type="Resource" uid="uid://d0uogq1xxy615" path="res://levels/islands/data/island_217_183.tres" id="19_u6ctt"]
@@ -26,16 +24,41 @@
 [ext_resource type="Resource" uid="uid://bwfaqewm3k24d" path="res://levels/islands/data/island_265_74.tres" id="22_whxyj"]
 [ext_resource type="Resource" uid="uid://cpaf6rioejx70" path="res://levels/islands/data/island_272_127.tres" id="23_yug6a"]
 [ext_resource type="Resource" uid="uid://or4yeo4ubxo0" path="res://levels/islands/data/island_283_185.tres" id="24_kvwkn"]
-[ext_resource type="Resource" uid="uid://c0ygrcjaqip14" path="res://levels/islands/data/island_291_130.tres" id="25_uy4ks"]
 [ext_resource type="Resource" uid="uid://hfa251q4iqel" path="res://levels/islands/data/island_300_164.tres" id="26_ll8tw"]
 [ext_resource type="Resource" uid="uid://jsshyw3e043m" path="res://levels/islands/data/island_303_71.tres" id="27_us8u7"]
 [ext_resource type="Resource" uid="uid://4phcnllnoocn" path="res://levels/islands/data/island_308_192.tres" id="28_eu7nw"]
 [ext_resource type="Resource" uid="uid://dn4uxb8jfe16m" path="res://levels/islands/data/island_309_125.tres" id="29_r4lfp"]
 [ext_resource type="Resource" uid="uid://dlyf68t03tx0i" path="res://levels/islands/data/island_317_67.tres" id="30_8d3xh"]
-[ext_resource type="Resource" uid="uid://b3f7hwkc1eby0" path="res://levels/islands/data/island_324_190.tres" id="31_dy2xi"]
 [ext_resource type="Resource" uid="uid://deltsjkh3eibf" path="res://levels/islands/data/island_331_165.tres" id="32_u4giq"]
 [ext_resource type="Resource" uid="uid://ct21fjtwby27j" path="res://levels/islands/data/island_347_184.tres" id="33_xtdkx"]
 [ext_resource type="Resource" uid="uid://lslltkj06ysc" path="res://levels/islands/data/island_356_165.tres" id="34_l2g0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bxe4"]
+size = Vector2(3472, 2360)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmf3"]
+size = Vector2(3567, 1692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0mkd"]
+size = Vector2(1932.5, 2932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4588"]
+size = Vector2(1711.25, 2932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dhk"]
+size = Vector2(2230.625, 2932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ngr"]
+size = Vector2(4500, 1672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buq4y"]
+size = Vector2(3114, 1760)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpuyw"]
+size = Vector2(3984, 1726)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd54k"]
+size = Vector2(3984, 1726)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3s8h"]
 radius = 31.0
@@ -58,187 +81,221 @@ animations = [{
 
 [node name="Seeders" type="Node" parent="." unique_id=1096319820]
 
-[node name="IslandSeeder(44, 32)" type="Node2D" parent="Seeders" unique_id=229407166 node_paths=PackedStringArray("tilemap")]
-position = Vector2(1424, -1008)
+[node name="IslandSeeder(44, -32)" type="Node2D" parent="Seeders" unique_id=229407166 node_paths=PackedStringArray("tilemap")]
+position = Vector2(7048, -5112)
 script = ExtResource("2_4hkiu")
+spawn_player = true
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("6_p6dhk")
 
-[node name="IslandSeeder(30, 63)" type="Node2D" parent="Seeders" unique_id=1141338217 node_paths=PackedStringArray("tilemap")]
-position = Vector2(976, -2000)
+[node name="IslandSeeder(30, -63)" type="Node2D" parent="Seeders" unique_id=1141338217 node_paths=PackedStringArray("tilemap")]
+position = Vector2(4808, -10072)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("5_v4588")
 
-[node name="IslandSeeder(68, 50)" type="Node2D" parent="Seeders" unique_id=1169248080 node_paths=PackedStringArray("tilemap")]
-position = Vector2(2192, -1584)
+[node name="IslandSeeder(68, -50)" type="Node2D" parent="Seeders" unique_id=1169248080 node_paths=PackedStringArray("tilemap")]
+position = Vector2(10888, -7992)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("7_l0ngr")
 
-[node name="IslandSeeder(89, 134)" type="Node2D" parent="Seeders" unique_id=2070945990 node_paths=PackedStringArray("tilemap")]
-position = Vector2(2864, -4272)
+[node name="IslandSeeder(89, -134)" type="Node2D" parent="Seeders" unique_id=2070945990 node_paths=PackedStringArray("tilemap")]
+position = Vector2(14248, -21432)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("8_buq4y")
 
-[node name="IslandSeeder(95, 31)" type="Node2D" parent="Seeders" unique_id=1215670300 node_paths=PackedStringArray("tilemap")]
-position = Vector2(3056, -976)
+[node name="IslandSeeder(95, -31)" type="Node2D" parent="Seeders" unique_id=1215670300 node_paths=PackedStringArray("tilemap")]
+position = Vector2(15208, -4952)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("9_wpuyw")
 
-[node name="IslandSeeder(120, 79)" type="Node2D" parent="Seeders" unique_id=343552664 node_paths=PackedStringArray("tilemap")]
-position = Vector2(3856, -2512)
+[node name="IslandSeeder(120, -79)" type="Node2D" parent="Seeders" unique_id=343552664 node_paths=PackedStringArray("tilemap")]
+position = Vector2(19208, -12632)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("10_yd54k")
 
-[node name="IslandSeeder(123, 103)" type="Node2D" parent="Seeders" unique_id=28416837 node_paths=PackedStringArray("tilemap")]
-position = Vector2(3952, -3280)
-script = ExtResource("2_4hkiu")
-tilemap = NodePath("../../TileMapLayer")
-island = ExtResource("11_8fh3u")
-
-[node name="IslandSeeder(164, 165)" type="Node2D" parent="Seeders" unique_id=740313893 node_paths=PackedStringArray("tilemap")]
-position = Vector2(5264, -5264)
-script = ExtResource("2_4hkiu")
-tilemap = NodePath("../../TileMapLayer")
-island = ExtResource("12_i0wyc")
-
-[node name="IslandSeeder(129, 120)" type="Node2D" parent="Seeders" unique_id=1401621560 node_paths=PackedStringArray("tilemap")]
-position = Vector2(4144, -3824)
+[node name="IslandSeeder(129, -120)" type="Node2D" parent="Seeders" unique_id=1401621560 node_paths=PackedStringArray("tilemap")]
+position = Vector2(20648, -19192)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("13_nev4v")
 
-[node name="IslandSeeder(138, 21)" type="Node2D" parent="Seeders" unique_id=1244178072 node_paths=PackedStringArray("tilemap")]
-position = Vector2(4432, -656)
+[node name="IslandSeeder(138, -21)" type="Node2D" parent="Seeders" unique_id=1244178072 node_paths=PackedStringArray("tilemap")]
+position = Vector2(22088, -3352)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("14_phyql")
 
-[node name="IslandSeeder(157, 33)" type="Node2D" parent="Seeders" unique_id=1406142804 node_paths=PackedStringArray("tilemap")]
-position = Vector2(5040, -1040)
+[node name="IslandSeeder(157, -33)" type="Node2D" parent="Seeders" unique_id=1406142804 node_paths=PackedStringArray("tilemap")]
+position = Vector2(25128, -5272)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("15_fwbv5")
 
-[node name="IslandSeeder(181, 27)" type="Node2D" parent="Seeders" unique_id=1805085794 node_paths=PackedStringArray("tilemap")]
-position = Vector2(5808, -848)
+[node name="IslandSeeder(164, -165)" type="Node2D" parent="Seeders" unique_id=740313893 node_paths=PackedStringArray("tilemap")]
+position = Vector2(26248, -26392)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
-island = ExtResource("16_jm061")
+island = ExtResource("12_i0wyc")
 
-[node name="IslandSeeder(207, 30)" type="Node2D" parent="Seeders" unique_id=500026566 node_paths=PackedStringArray("tilemap")]
-position = Vector2(6640, -944)
+[node name="IslandSeeder(207, -30)" type="Node2D" parent="Seeders" unique_id=500026566 node_paths=PackedStringArray("tilemap")]
+position = Vector2(33128, -4792)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("17_lh7rn")
 
-[node name="IslandSeeder(209, 101)" type="Node2D" parent="Seeders" unique_id=615668219 node_paths=PackedStringArray("tilemap")]
-position = Vector2(6704, -3216)
+[node name="IslandSeeder(209, -101)" type="Node2D" parent="Seeders" unique_id=615668219 node_paths=PackedStringArray("tilemap")]
+position = Vector2(33448, -16152)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("18_m4e66")
 
-[node name="IslandSeeder(217, 183)" type="Node2D" parent="Seeders" unique_id=275605544 node_paths=PackedStringArray("tilemap")]
-position = Vector2(6960, -5840)
+[node name="IslandSeeder(217, -183)" type="Node2D" parent="Seeders" unique_id=275605544 node_paths=PackedStringArray("tilemap")]
+position = Vector2(34728, -29272)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("19_u6ctt")
 
-[node name="IslandSeeder(222, 132)" type="Node2D" parent="Seeders" unique_id=1482456765 node_paths=PackedStringArray("tilemap")]
-position = Vector2(7120, -4208)
+[node name="IslandSeeder(222, -132)" type="Node2D" parent="Seeders" unique_id=1482456765 node_paths=PackedStringArray("tilemap")]
+position = Vector2(35528, -21112)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("20_1okv1")
 
-[node name="IslandSeeder(249, 157)" type="Node2D" parent="Seeders" unique_id=2145022066 node_paths=PackedStringArray("tilemap")]
-position = Vector2(7984, -5008)
+[node name="IslandSeeder(249, -157)" type="Node2D" parent="Seeders" unique_id=2145022066 node_paths=PackedStringArray("tilemap")]
+position = Vector2(39848, -25112)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("21_tvj58")
 
-[node name="IslandSeeder(265, 74)" type="Node2D" parent="Seeders" unique_id=1960159188 node_paths=PackedStringArray("tilemap")]
-position = Vector2(8496, -2352)
+[node name="IslandSeeder(265, -74)" type="Node2D" parent="Seeders" unique_id=1960159188 node_paths=PackedStringArray("tilemap")]
+position = Vector2(42408, -11832)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("22_whxyj")
 
-[node name="IslandSeeder(272, 127)" type="Node2D" parent="Seeders" unique_id=692185345 node_paths=PackedStringArray("tilemap")]
-position = Vector2(8720, -4048)
+[node name="IslandSeeder(272, -127)" type="Node2D" parent="Seeders" unique_id=692185345 node_paths=PackedStringArray("tilemap")]
+position = Vector2(43528, -20312)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("23_yug6a")
 
-[node name="IslandSeeder(283, 185)" type="Node2D" parent="Seeders" unique_id=1559523395 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9072, -5904)
+[node name="IslandSeeder(283, -185)" type="Node2D" parent="Seeders" unique_id=1559523395 node_paths=PackedStringArray("tilemap")]
+position = Vector2(45288, -29592)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("24_kvwkn")
 
-[node name="IslandSeeder(291, 130)" type="Node2D" parent="Seeders" unique_id=528613015 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9328, -4144)
-script = ExtResource("2_4hkiu")
-tilemap = NodePath("../../TileMapLayer")
-island = ExtResource("25_uy4ks")
-
-[node name="IslandSeeder(300, 164)" type="Node2D" parent="Seeders" unique_id=22817004 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9616, -5232)
+[node name="IslandSeeder(300, -164)" type="Node2D" parent="Seeders" unique_id=22817004 node_paths=PackedStringArray("tilemap")]
+position = Vector2(48008, -26232)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("26_ll8tw")
 
-[node name="IslandSeeder(303, 71)" type="Node2D" parent="Seeders" unique_id=208642675 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9712, -2256)
+[node name="IslandSeeder(303, -71)" type="Node2D" parent="Seeders" unique_id=208642675 node_paths=PackedStringArray("tilemap")]
+position = Vector2(48488, -11352)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("27_us8u7")
 
-[node name="IslandSeeder(308, 192)" type="Node2D" parent="Seeders" unique_id=2087567086 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9872, -6128)
+[node name="IslandSeeder(308, -192)" type="Node2D" parent="Seeders" unique_id=2087567086 node_paths=PackedStringArray("tilemap")]
+position = Vector2(49288, -30712)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("28_eu7nw")
 
-[node name="IslandSeeder(309, 125)" type="Node2D" parent="Seeders" unique_id=660072134 node_paths=PackedStringArray("tilemap")]
-position = Vector2(9904, -3984)
+[node name="IslandSeeder(309, -125)" type="Node2D" parent="Seeders" unique_id=660072134 node_paths=PackedStringArray("tilemap")]
+position = Vector2(49448, -19992)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("29_r4lfp")
 
-[node name="IslandSeeder(317, 67)" type="Node2D" parent="Seeders" unique_id=1937626362 node_paths=PackedStringArray("tilemap")]
-position = Vector2(10160, -2128)
+[node name="IslandSeeder(317, -67)" type="Node2D" parent="Seeders" unique_id=1937626362 node_paths=PackedStringArray("tilemap")]
+position = Vector2(50728, -10712)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("30_8d3xh")
 
-[node name="IslandSeeder(324, 190)" type="Node2D" parent="Seeders" unique_id=921591463 node_paths=PackedStringArray("tilemap")]
-position = Vector2(10384, -6064)
-script = ExtResource("2_4hkiu")
-tilemap = NodePath("../../TileMapLayer")
-island = ExtResource("31_dy2xi")
-
-[node name="IslandSeeder(331, 165)" type="Node2D" parent="Seeders" unique_id=2042084888 node_paths=PackedStringArray("tilemap")]
-position = Vector2(10608, -5264)
+[node name="IslandSeeder(331, -165)" type="Node2D" parent="Seeders" unique_id=2042084888 node_paths=PackedStringArray("tilemap")]
+position = Vector2(52968, -26392)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("32_u4giq")
 
-[node name="IslandSeeder(347, 184)" type="Node2D" parent="Seeders" unique_id=1949235048 node_paths=PackedStringArray("tilemap")]
-position = Vector2(11120, -5872)
+[node name="IslandSeeder(347, -184)" type="Node2D" parent="Seeders" unique_id=1949235048 node_paths=PackedStringArray("tilemap")]
+position = Vector2(55528, -29432)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("33_xtdkx")
 
-[node name="IslandSeeder(356, 165)" type="Node2D" parent="Seeders" unique_id=1563504913 node_paths=PackedStringArray("tilemap")]
-position = Vector2(11408, -5264)
+[node name="IslandSeeder(356, -165)" type="Node2D" parent="Seeders" unique_id=1563504913 node_paths=PackedStringArray("tilemap")]
+position = Vector2(56968, -26392)
 script = ExtResource("2_4hkiu")
 tilemap = NodePath("../../TileMapLayer")
 island = ExtResource("34_l2g0d")
 
+[node name="ZoneBounds" type="Node" parent="." unique_id=2079695386]
+
+[node name="Zone" type="Area2D" parent="ZoneBounds" unique_id=20394634]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone" unique_id=1782968893]
+position = Vector2(1723, -1182)
+shape = SubResource("RectangleShape2D_1bxe4")
+
+[node name="Zone2" type="Area2D" parent="ZoneBounds" unique_id=1737026959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone2" unique_id=1060528308]
+position = Vector2(5280.5, -848)
+shape = SubResource("RectangleShape2D_2jmf3")
+
+[node name="Zone3" type="Area2D" parent="ZoneBounds" unique_id=908394938]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone3" unique_id=1293777824]
+position = Vector2(4453.75, -3161)
+shape = SubResource("RectangleShape2D_p0mkd")
+
+[node name="Zone4" type="Area2D" parent="ZoneBounds" unique_id=2071554691]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone4" unique_id=708503229]
+position = Vector2(2622.625, -3824)
+shape = SubResource("RectangleShape2D_v4588")
+
+[node name="Zone5" type="Area2D" parent="ZoneBounds" unique_id=1877104321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone5" unique_id=538059358]
+position = Vector2(6564.3125, -3161)
+shape = SubResource("RectangleShape2D_p6dhk")
+
+[node name="Zone6" type="Area2D" parent="ZoneBounds" unique_id=1509514281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone6" unique_id=1898742090]
+position = Vector2(6344, -5509)
+shape = SubResource("RectangleShape2D_l0ngr")
+
+[node name="Zone7" type="Area2D" parent="ZoneBounds" unique_id=602534168]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone7" unique_id=605577828]
+position = Vector2(10160, -5536)
+shape = SubResource("RectangleShape2D_buq4y")
+
+[node name="Zone8" type="Area2D" parent="ZoneBounds" unique_id=686095203]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone8" unique_id=1791396806]
+position = Vector2(9705, -3769)
+shape = SubResource("RectangleShape2D_wpuyw")
+
+[node name="Zone9" type="Area2D" parent="ZoneBounds" unique_id=529718057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone9" unique_id=90848112]
+position = Vector2(9684, -2035)
+shape = SubResource("RectangleShape2D_yd54k")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=101945178]
+tile_map_data = PackedByteArray(0, 0, 61, 1, 189, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("2_1oge5")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1176458395]
@@ -249,10 +306,10 @@ script = ExtResource("5_4hkiu")
 shape = SubResource("CapsuleShape2D_t3s8h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=236921076]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_1oge5")
 
 [node name="PlayerMovement" type="Node" parent="Player" unique_id=1460404518]
 script = ExtResource("3_t3s8h")
-speed = 200.0
+speed = 100.0
 metadata/_custom_type_script = "uid://bcxrgqx6oqhuu"

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_seywl")
-location = Vector2i(303, 71)
+location = Vector2i(303, -71)
 metadata/_custom_type_script = "uid://cg1m7m8wc2e8g"

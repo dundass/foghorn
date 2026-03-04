@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_pirxt")
-location = Vector2i(138, 21)
+location = Vector2i(138, -21)
 metadata/_custom_type_script = "uid://cg1m7m8wc2e8g"

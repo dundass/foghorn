@@ -2,6 +2,7 @@
 class_name IslandSeeder
 extends Node2D
 
+@export var spawn_player: bool = false
 @export var tilemap: TileMapLayer
 @export var island: IslandData:
 	set(new_island):
@@ -15,7 +16,19 @@ extends Node2D
 			_on_resource_changed()
 
 func _on_resource_changed() -> void:
-	var flippedY: int = island.location.y * -1
-	var tilemap_loc: Vector2 = tilemap.map_to_local(Vector2(island.location.x, flippedY))
-	global_position = tilemap_loc
-	name = island.name + "Seeder" + str(island.location)
+	if tilemap:
+		var tilemap_loc: Vector2 = tilemap.map_to_local(island.get_location_chunked())
+		global_position = tilemap_loc
+		name = island.name + "Seeder" + str(island.location)
+
+func _draw() -> void:
+	if Engine.is_editor_hint():
+		# Vector2.ZERO is the position relative to this node
+		draw_circle(Vector2.ZERO, 200, Color.GREEN)
+
+func _ready() -> void:
+	if spawn_player:
+		call_deferred("spawn_player_here")
+
+func spawn_player_here() -> void:
+	GameManager.player.global_position = global_position
