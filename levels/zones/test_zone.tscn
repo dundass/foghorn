@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dke3b3daasych" path="res://levels/base_level.tscn" id="1_nbvkk"]
 [ext_resource type="TileSet" uid="uid://chbuv2lw3i8qp" path="res://levels/art/tilesets/test_tileset.tres" id="2_1oge5"]
 [ext_resource type="Script" uid="uid://bhlspyk6vsck3" path="res://levels/generation/island_seeder.gd" id="2_4hkiu"]
-[ext_resource type="Texture2D" uid="uid://d4ghngoipjd1g" path="res://icon.svg" id="2_j5u5c"]
-[ext_resource type="Script" uid="uid://bcxrgqx6oqhuu" path="res://entities/player/player_movement.gd" id="3_t3s8h"]
-[ext_resource type="Script" uid="uid://dslvhjq7a0vo5" path="res://entities/player/player.gd" id="5_4hkiu"]
 [ext_resource type="Resource" uid="uid://c174yrynivmoh" path="res://levels/islands/data/island_30_63.tres" id="5_v4588"]
 [ext_resource type="Resource" uid="uid://nv4b8gkyyoss" path="res://levels/islands/data/island_44_32.tres" id="6_p6dhk"]
 [ext_resource type="Resource" uid="uid://if1ae84r6mt6" path="res://levels/islands/data/island_68_50.tres" id="7_l0ngr"]
@@ -29,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://4phcnllnoocn" path="res://levels/islands/data/island_308_192.tres" id="28_eu7nw"]
 [ext_resource type="Resource" uid="uid://dn4uxb8jfe16m" path="res://levels/islands/data/island_309_125.tres" id="29_r4lfp"]
 [ext_resource type="Resource" uid="uid://dlyf68t03tx0i" path="res://levels/islands/data/island_317_67.tres" id="30_8d3xh"]
+[ext_resource type="PackedScene" uid="uid://di6edxld886cm" path="res://entities/player/player.tscn" id="30_p301t"]
 [ext_resource type="Resource" uid="uid://deltsjkh3eibf" path="res://levels/islands/data/island_331_165.tres" id="32_u4giq"]
 [ext_resource type="Resource" uid="uid://ct21fjtwby27j" path="res://levels/islands/data/island_347_184.tres" id="33_xtdkx"]
 [ext_resource type="Resource" uid="uid://lslltkj06ysc" path="res://levels/islands/data/island_356_165.tres" id="34_l2g0d"]
@@ -59,21 +57,6 @@ size = Vector2(14199, 7444)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yd54k"]
 size = Vector2(16731, 8490)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3s8h"]
-radius = 31.0
-height = 62.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1oge5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_j5u5c")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="TestZone" type="Node2D" unique_id=888906013]
 
@@ -298,18 +281,4 @@ shape = SubResource("RectangleShape2D_yd54k")
 tile_map_data = PackedByteArray(0, 0, 61, 1, 189, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("2_1oge5")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1176458395]
-motion_mode = 1
-script = ExtResource("5_4hkiu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1009836515]
-shape = SubResource("CapsuleShape2D_t3s8h")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=236921076]
-scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_1oge5")
-
-[node name="PlayerMovement" type="Node" parent="Player" unique_id=1460404518]
-script = ExtResource("3_t3s8h")
-speed = 100.0
-metadata/_custom_type_script = "uid://bcxrgqx6oqhuu"
+[node name="Player" parent="." unique_id=1981899232 instance=ExtResource("30_p301t")]
