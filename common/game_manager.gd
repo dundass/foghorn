@@ -3,3 +3,4 @@ extends Node
 
 var player: Player
 var world_clock: WorldClock
+var weather_controller: WeatherController

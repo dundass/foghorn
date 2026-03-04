@@ -1,10 +1,10 @@
 class_name SunController
 extends Node
 
-@export var light_offset: float = 1.0
-@export var light_amplitude: float = 0.5
-@export var light_limit: float = 1.0
-@export var sun_light: Light2D
+@export var light_offset: float = -0.5
+@export var light_amplitude: float = 0.75
+@export var light_limit: float = 0.5
+@export var dark_light: Light2D
 
 var world_clock: WorldClock
 
@@ -14,4 +14,4 @@ func _ready() -> void:
 
 func _update_light(time: int) -> void:
 	var intensity: float = light_offset + (sin(time * 6.33 / world_clock.day_length) * light_amplitude)
-	sun_light.light_energy = min(intensity, light_limit)
+	dark_light.energy = clamp(intensity, 0, light_limit)
