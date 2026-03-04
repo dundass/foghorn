@@ -34,31 +34,31 @@
 [ext_resource type="Resource" uid="uid://lslltkj06ysc" path="res://levels/islands/data/island_356_165.tres" id="34_l2g0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bxe4"]
-size = Vector2(3472, 2360)
+size = Vector2(18579, 11437)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jmf3"]
-size = Vector2(3567, 1692)
+size = Vector2(20774, 11314)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0mkd"]
-size = Vector2(1932.5, 2932)
+size = Vector2(16150.5, 3717.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4588"]
-size = Vector2(1711.25, 2932)
+size = Vector2(21984, 15296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6dhk"]
-size = Vector2(2230.625, 2932)
+size = Vector2(10769.656, 8911)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ngr"]
-size = Vector2(4500, 1672)
+size = Vector2(11501, 9203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buq4y"]
-size = Vector2(3114, 1760)
+size = Vector2(16892, 9305)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wpuyw"]
-size = Vector2(3984, 1726)
+size = Vector2(14199, 7444)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yd54k"]
-size = Vector2(3984, 1726)
+size = Vector2(16731, 8490)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3s8h"]
 radius = 31.0
@@ -243,55 +243,55 @@ island = ExtResource("34_l2g0d")
 [node name="Zone" type="Area2D" parent="ZoneBounds" unique_id=20394634]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone" unique_id=1782968893]
-position = Vector2(1723, -1182)
+position = Vector2(9276.5, -5720.5)
 shape = SubResource("RectangleShape2D_1bxe4")
 
 [node name="Zone2" type="Area2D" parent="ZoneBounds" unique_id=1737026959]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone2" unique_id=1060528308]
-position = Vector2(5280.5, -848)
+position = Vector2(29025, -5499)
 shape = SubResource("RectangleShape2D_2jmf3")
 
 [node name="Zone3" type="Area2D" parent="ZoneBounds" unique_id=908394938]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone3" unique_id=1293777824]
-position = Vector2(4453.75, -3161)
+position = Vector2(16112.25, -13226.75)
 shape = SubResource("RectangleShape2D_p0mkd")
 
 [node name="Zone4" type="Area2D" parent="ZoneBounds" unique_id=2071554691]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone4" unique_id=708503229]
-position = Vector2(2622.625, -3824)
+position = Vector2(19527, -22858)
 shape = SubResource("RectangleShape2D_v4588")
 
 [node name="Zone5" type="Area2D" parent="ZoneBounds" unique_id=1877104321]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone5" unique_id=538059358]
-position = Vector2(6564.3125, -3161)
+position = Vector2(36019.17, -18598)
 shape = SubResource("RectangleShape2D_p6dhk")
 
 [node name="Zone6" type="Area2D" parent="ZoneBounds" unique_id=1509514281]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone6" unique_id=1898742090]
-position = Vector2(6344, -5509)
+position = Vector2(36198.5, -27896.5)
 shape = SubResource("RectangleShape2D_l0ngr")
 
 [node name="Zone7" type="Area2D" parent="ZoneBounds" unique_id=602534168]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone7" unique_id=605577828]
-position = Vector2(10160, -5536)
+position = Vector2(50509, -27979.5)
 shape = SubResource("RectangleShape2D_buq4y")
 
 [node name="Zone8" type="Area2D" parent="ZoneBounds" unique_id=686095203]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone8" unique_id=1791396806]
-position = Vector2(9705, -3769)
+position = Vector2(49129.5, -19458)
 shape = SubResource("RectangleShape2D_wpuyw")
 
 [node name="Zone9" type="Area2D" parent="ZoneBounds" unique_id=529718057]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneBounds/Zone9" unique_id=90848112]
-position = Vector2(9684, -2035)
+position = Vector2(47863.5, -9932)
 shape = SubResource("RectangleShape2D_yd54k")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=101945178]

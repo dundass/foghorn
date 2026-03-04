@@ -12,10 +12,10 @@ script = ExtResource("1_eqj1n")
 
 [node name="OceanRepeat" type="Sprite2D" parent="." unique_id=688161330]
 texture_repeat = 2
-position = Vector2(6000, -4096)
+position = Vector2(10000, -6000)
 texture = ExtResource("2_p5284")
 region_enabled = true
-region_rect = Rect2(0, 0, 12000, 8192)
+region_rect = Rect2(0, 0, 20000, 12000)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1256682455]
 
