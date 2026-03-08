@@ -8,12 +8,14 @@ var _currently_worn: Array[Wearable] = []
 var _player_inventory: Inventory
 
 func _ready() -> void:
-	GameManager.player.wearable_manager = self
-	_player_inventory = GameManager.player.inventory
-	
+	register_references.call_deferred()
 	# Initialize the currently worn array with nulls based on the number of wearable slots
 	var num_slots: int = Wearable.WearableSlot.size()
 	_currently_worn.resize(num_slots)
+
+func register_references() -> void:
+	GameManager.player.wearable_manager = self
+	_player_inventory = GameManager.player.inventory
 
 func equip(new_item: Wearable) -> void:
 	# Determine the slot index based on the new item's slot
