@@ -12,9 +12,6 @@ class_name TerraGenerator
 @export var world_renderer: WorldRenderer
 @export var player: CharacterBody2D
 
-@export var denizen_parent: Node
-@export var denizen_prefab: Node
-
 enum BlockType {
 	GROUND = 1,
 	FOREST = 2,
@@ -40,24 +37,22 @@ var _rulesets: Dictionary = {
 	"house": [0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 }
 
-var _block_size: int = 10
-
 func _ready() -> void:
 	# Stores all terra tile states
-	land_ca = CA2D.new(10, 384 * _block_size)
+	land_ca = CA2D.new(10, 384 * Constants.CHUNK_CELL_SIZE)
 	land_ca.set_ruleset(_rulesets["land"])
 	
 	# Set all rules for uniformly live neighbourhoods to stay at that total
 	for i in range(land_ca.num_states):
 		land_ca._rule_set[i * 8] = i
 	
-	house_ca = CA2D.new(3, 384 * _block_size)
+	house_ca = CA2D.new(3, 384 * Constants.CHUNK_CELL_SIZE)
 	
 	# Stores all world/island chunk states
 	chunk_ca = CA2D.new(4, 384)
 	chunk_ca.set_ruleset(_rulesets["island"])
 	
-	forest_ca = CA2D.new(3, 384 * _block_size)
+	forest_ca = CA2D.new(3, 384 * Constants.CHUNK_CELL_SIZE)
 	forest_ca.set_lambda_ruleset(0.3)
 	
 	_generate_world()
@@ -72,7 +67,7 @@ func _ready() -> void:
 		world_renderer.render_world(land_ca)
 	
 	if player:
-		player.global_position = Vector2(_islands[0].location.x * _block_size, _islands[0].location.y * _block_size)
+		player.global_position = Vector2(_islands[0].location.x * Constants.CHUNK_CELL_SIZE, _islands[0].location.y * Constants.CHUNK_CELL_SIZE)
 
 
 func _generate_world() -> void:
@@ -84,10 +79,10 @@ func _generate_world() -> void:
 	for i in range(chunk_cell_iterations):
 		for n in range(_islands.size()):
 			if i == _islands[n].growth_delay:
-				for island_seed: Dictionary in _islands[n].seeds:
-					var x: int = int(_islands[n].location.x) + island_seed.x
-					var y: int = int(_islands[n].location.y) + island_seed.y
-					chunk_ca.set_cell(x, y, _islands[n].seeds[island_seed])
+				for seed_position: Vector2i in _islands[n].seeds:
+					var x: int = int(_islands[n].location.x) + seed_position.x
+					var y: int = int(_islands[n].location.y) + seed_position.y
+					chunk_ca.set_cell(x, y, _islands[n].seeds[seed_position])
 		chunk_ca.update()
 	
 	print("finished island generation !")
@@ -98,8 +93,8 @@ func _generate_world() -> void:
 	
 	for i in range(land_ca.get_xsize()):
 		for j in range(land_ca.get_ysize()):
-			var chunk_x: int = i / _block_size
-			var chunk_y: int = j / _block_size
+			var chunk_x: int = i / Constants.CHUNK_CELL_SIZE
+			var chunk_y: int = j / Constants.CHUNK_CELL_SIZE
 			
 			# If the tile is water
 			if chunk_ca.get_cell(chunk_x, chunk_y) == 0:
@@ -130,18 +125,11 @@ func _generate_settlements() -> void:
 	
 	for i in range(land_ca.get_xsize()):
 		for j in range(land_ca.get_ysize()):
-			var chunk_x: int = i / _block_size
-			var chunk_y: int = j / _block_size
+			var chunk_x: int = i / Constants.CHUNK_CELL_SIZE
+			var chunk_y: int = j / Constants.CHUNK_CELL_SIZE
 			
 			if chunk_ca.get_cell(chunk_x, chunk_y) == 1:
 				house_ca.set_cell(i, j, randi_range(1, 3))
-				
-				if randf() < 0.01:
-					if denizen_prefab:
-						var denizen: Node = denizen_prefab.duplicate()
-						denizen.global_position = Vector3(i + randf_range(-5, 5), j + randf_range(-5, 5), 0)
-						if denizen_parent:
-							denizen_parent.add_child(denizen)
 	
 	house_ca.set_ruleset(_rulesets["house"])
 	house_ca.update_iterations(5)
